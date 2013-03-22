@@ -91,7 +91,7 @@ $home = $_SERVER['SERVER_NAME'] . $install_directory; // This figures out where 
 $posts_printed = 0; // Set the loops as being at the beginning
 $posts_divider = 3; // Because it displays three wide on the home page, we need to insert some breakers every three posts to keep things neat
 $requested = str_replace("'", "", $_SERVER['REQUEST_URI']);
-$requested = str_replace('"', "", $_SERVER['REQUEST_URI']);
+$requested = str_replace('"', "", $requested);
 // print $requested; // Check where we think we are, useful for debuggin post not found errors
 
 
