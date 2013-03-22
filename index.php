@@ -10,7 +10,7 @@
 
 
 // Site Information
-$site_title = 'Simplet Beta Title'; // Your blog title (NO HTML), appears in the header
+$site_title = 'Simplet Blog Title'; // Your blog title (NO HTML), appears in the header
 $site_tagline = 'The totally revolutionary open-source teeny-tiny blogging and content management system.'; // Your blog tagline (NO HTML), appears under the title
 $site_description = '<p>This is the bit abut your blog. You should probably put something here.</p><p>Perhaps something about how awesome Simplet is?</p>'; // Your blog description, appears in the footer
 
