@@ -20,4 +20,4 @@ CSimplet is a small, basic, one-file blog platform that we have custom coded to 
 7. Profit.
 
 ##Check it out
-You can [Download Simplet](http://simplet.eustasy.org/download), check out the styling you can do with the amazing [Responsive Grid System](responsivegridsystem.com), and check out how to do some basic customizations on the Simplet site (of course it's powered by Simplet!).
+You can [Download Simplet](http://simplet.eustasy.org/download), check out the styling you can do with the amazing [Responsive Grid System](http://www.responsivegridsystem.com/), and check out how to do some basic customizations on the Simplet site (of course it's powered by Simplet!).
