@@ -15,8 +15,7 @@ CSimplet is a small, basic, one-file blog platform that we have custom coded to 
 1. Download the latest release.
 2. Copy all your information from the index.php file to a file elsewhere.
 3. Completely remove all the files from your current installation, but leave the database untouched.
-5. Edit the config.php file and insert the variables from your old index.php file.
-You will need to add some new things as there are new variables.
+5. Edit the config.php file and insert the variables from your old index.php file. Add new variables where appropriate.
 6. Upload everything (except posts.sql) to your webserver.
 7. Profit.
 
