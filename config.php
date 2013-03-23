@@ -104,7 +104,8 @@ $requested = str_replace('"', "", $requested);
 // Try to connect to the database immediately
 $connection = mysqli_connect($database_username, $database_user, $database_pass, $database_name);
 if (!$connection) {
-	die('Connect Error: ' . mysqli_connect_error());
+	echo '<!DocType html><html><head><meta charset="UTf-8"><title>Simplet Encountered a Fatal Connection Error</title><style>body{width:70%;margin:2em auto}h1{font:normal 6em/1.7 LeagueGothicRegular,\'lucida sans unicode\',\'lucida grande\',\'Trebuchet MS\',verdana,arial,helvetica,helve,sans-serif;color:#111;margin:0;text-align:center}h2{font:normal 2em/2 LeagueGothicRegular,\'lucida sans unicode\',\'lucida grande\',\'Trebuchet MS\',verdana,arial,helvetica,helve,sans-serif;color:#222;margin:2em 0;text-align:center}p{font:normal 1em/1.7 LeagueGothicRegular,\'lucida sans unicode\',\'lucida grande\',\'Trebuchet MS\',verdana,arial,helvetica,helve,sans-serif;color:#333;margin:0;text-align:justify}h3{font: lighter 2em/10 LeagueGothicRegular,\'lucida sans unicode\',\'lucida grande\',\'Trebuchet MS\',verdana,arial,helvetica,helve,sans-serif;font-style:italic;color:#222;margin:0;text-align:right}a{color:#1777af;text-decoration:none}</style></head><body><h1>FATAL ERROR :</h1><h2>Simplet has been unable to connect to the database.</h2><p>Simplet encountered a fatal connection error and has had to hault this application. It is most likely a probem with connecting to your database using the username and password you supplied. Make sure your hostname, username, password, database, and table name are all correct in you confiuration file. Then, you may <a href="https://github.com/eustasy/simplet/issues">raise an issue on GitHub</a> with the error message, which is printed below.</p><pre>' . mysqli_connect_error() . '</pre><h3><a href="http://simplet.eustasy.org/">Simplet</a></h3></div></body></html>';
+	exit;
 }
 
 ?>
