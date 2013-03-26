@@ -85,10 +85,10 @@ echo '<link rel="shortcut icon" href="http://' . $home . 'favicon.ico">';
 // Styling
 echo '<link rel="stylesheet" href="http://' . $home . 'style.min.css">';
 
-// You can include a more readable version of the stylesheet if you want to edit it
-// echo '<link rel="stylesheet" href="http://' . $home . 'syle.css">';
 // This big block of css the cool columns and responsive stuff. The bits where you can change colours come later.
 // echo '<link rel="stylesheet" href="http://' . $home . 'col.min.css">';
+// You can include a more readable version of the stylesheet if you want to edit it
+// echo '<link rel="stylesheet" href="http://' . $home . 'style.css">';
 
 // Now you can add your own stylesheet. If you want.
 // The best way is to do it like i did above
