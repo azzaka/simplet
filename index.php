@@ -281,7 +281,7 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 						echo "No";
 					}
 					echo '</td><td>' . $row[5] . '</td>';
-					echo '<td><a href="' . $home . $row[1] . '">View</a></td>';
+					echo '<td><a href="http://' . $home . $row[1] . '">View</a></td>';
 					echo '<td><form action="' . $page_edit . '" method="post"><input type="hidden" name="url" value="' . $row[1] . '" /><input type="submit" class="no" value="Edit" /></form></td>';
 					echo '<td><form action="' . $page_delete . '" method="post"><input type="hidden" name="url" value="' . $row[1] . '" /><input type="submit" class="no" value="Delete" /></form></td></tr>';
 				}
