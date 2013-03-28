@@ -208,7 +208,7 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 
 	if ( $auth == 'true' ) {
 		echo '<h2>Log Out?</h2>';
-		echo '<h3><a href="http://' . $home . $do_logout . '">Yes, log me out</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">No, Return home</a></h3>';
+		echo '<h3><a href="http://' . $home . $do_logout . '">Yes, log me out</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">No, go to Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">No, Return home</a></h3>';
 	} else {
 		echo '<h2>You aren\'t logged in</h2>';
 		echo '<h3><a href="http://' . $home . $homepage . '">Return home</a></h3>';
@@ -352,7 +352,7 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 		} else { // But if it worked
 			mysqli_free_result($result); // Get rid of the result
 			echo '<h2>Post Created</h2>'; // Tell us it worked
-			echo '<h3><a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+			echo '<h3><form action="' . $page_edit . '" method="post"><input type="hidden" name="url" value="' . $url . '" /><input type="submit" class="no" value="Edit" /></form> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
 		}
 	} else { // If you're not allowed to be here
 		echo '<h2>You can\'t create a post, you\'re not logged in</h2>';
@@ -461,7 +461,7 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 			mysqli_free_result($result);
 
 			echo '<h2>Post Edited</h2>';
-			echo '<h3><a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+			echo '<h3><form action="' . $page_edit . '" method="post"><input type="hidden" name="url" value="' . $url . '" /><input type="submit" class="no" value="Edit" /></form> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
 
 		}
 	} else {
