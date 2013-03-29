@@ -102,7 +102,7 @@ echo '<link rel="stylesheet" href="http://' . $home . 'style.min.css">';
 
 
 // Time to figure out what they're after
-if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accurately, the index
+if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately, the index
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>' . $site_title . ' &nbsp;&middot;&nbsp; ' . $site_tagline . '</title>';
@@ -142,7 +142,7 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 		} // And start again
 
 		mysqli_free_result($result); // Get rid of the results
-		echo '</div>'; // END THE HOMEPAGE
+		echo '</div>'; // END HOMEPAGE
 		// That's the end of the hompage, i hope you enjoyed the show
 		// The footer will be requested, but not until after everything else, because, well, they all need it
 
@@ -150,7 +150,7 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 
 
 
-} elseif ( $requested == $install_directory . $page_login ) { // BEGIN THE LOGIN PAGE
+} elseif ( $requested == $install_directory . $page_login ) { // BEGIN LOGIN PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Login &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -163,11 +163,11 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 		echo '<h3><a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>'; // Seriously, go away.
 	} else { // No?
 		echo '<form class="span_1_of_1" action="' . $do_login . '" method="post"><h3>Username</h3><input type="text" name="user" /><h3>Password</h3><input type="password" name="pass" /><input type="submit" value="Login" /></form>'; // Okay, login then
-	} // END THE LOGIN PAGE
+	} // END LOGIN PAGE
 
 
 
-} elseif ( $requested == $install_directory . $do_login ) { // BEGIN THE DOLOGIN PAGE
+} elseif ( $requested == $install_directory . $do_login ) { // BEGIN DOLOGIN PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Logged In &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -194,11 +194,11 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 			echo '<h2>Incorrect Username</h2>';
 			echo '<h3><a href="http://' . $home . $page_login . '">Try again</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
 		}
-	} // END THE DOLOGIN PAGE
+	} // END DOLOGIN PAGE
 
 
 
-} elseif ( $requested == $install_directory . $page_logout ) { // BEGIN THE LOGOUT PAGE
+} elseif ( $requested == $install_directory . $page_logout ) { // BEGIN LOGOUT PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Logout &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -212,11 +212,11 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 	} else {
 		echo '<h2>You aren\'t logged in</h2>';
 		echo '<h3><a href="http://' . $home . $homepage . '">Return home</a></h3>';
-	} // END THE LOGOUT PAGE
+	} // END LOGOUT PAGE
 
 
 
-} elseif ( $requested == $install_directory . $do_logout ) { // BEGIN THE DOLOGOUT PAGE
+} elseif ( $requested == $install_directory . $do_logout ) { // BEGIN DOLOGOUT PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Logged Out &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -230,11 +230,11 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 	} else {
 		echo '<h2>Logged Out</h2>';
 		echo '<h3><a href="http://' . $home . $homepage . '">Return home</a></h3>';
-	} // END THE DOLOGOUT PAGE
+	} // END DOLOGOUT PAGE
 
 
 
-} elseif ( $requested == $install_directory . $page_admin ) { // BEGIN THE ADMIN PAGE
+} elseif ( $requested == $install_directory . $page_admin ) { // BEGIN ADMIN PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Administration &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -295,10 +295,10 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 		
 	} else {
 		echo '<div class="section group"><div class="col span_1_of_1"><div class="padten"><h2>Access Denied</h2></div></div></div><div class="section group"><div class="col span_1_of_1"><div class="padten"></div><h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3></div></div>';
-	} // END THE ADMIN PAGE
+	} // END ADMIN PAGE
 
 
-} elseif ( $requested == $install_directory . $page_create ) { // BEGIN THE CREATE PAGE
+} elseif ( $requested == $install_directory . $page_create ) { // BEGIN CREATE PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Create a new Post &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -315,9 +315,9 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 	} else {
 		echo '<h2>You can\'t edit, you\'re not logged in</h2>';
 		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
-	} // END THE CREATE PAGE
+	} // END CREATE PAGE
 
-} elseif ( $requested == $install_directory . $do_create ) { // BEGIN THE DOCREATE PAGE
+} elseif ( $requested == $install_directory . $do_create ) { // BEGIN DOCREATE PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Post Created &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -357,11 +357,11 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 	} else { // If you're not allowed to be here
 		echo '<h2>You can\'t create a post, you\'re not logged in</h2>';
 		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
-	} // END THE DOCREATE PAGE
+	} // END DOCREATE PAGE
 
 
 
-} elseif ( $requested == $install_directory . $page_edit ) { // BEGIN THE EDIT PAGE
+} elseif ( $requested == $install_directory . $page_edit ) { // BEGIN EDIT PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Edit a Post &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -415,11 +415,11 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 	} else {
 		echo '<h2>You can\'t edit, you\'re not logged in</h2>';
 		echo '<h3><a href="http://' . $home . 'login">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
-	} // END THE EDIT PAGE
+	} // END EDIT PAGE
 
 
 
-} elseif ( $requested == $install_directory . $do_edit ) { // BEGIN THE DOEDIT PAGE
+} elseif ( $requested == $install_directory . $do_edit ) { // BEGIN DOEDIT PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Post Edited &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -467,11 +467,11 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 	} else {
 		echo '<h2>You can\'t edit a post, you\'re not logged in</h2>';
 		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
-	} // END THE DOEDIT PAGE
+	} // END DOEDIT PAGE
 
 
 
-} elseif ( $requested == $install_directory . $page_delete ) { // BEGIN THE DELETE PAGE
+} elseif ( $requested == $install_directory . $page_delete ) { // BEGIN DELETE PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Delete Post &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -485,11 +485,11 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 	} else {
 		echo '<h2>You can\'t delete a post, you\'re not logged in</h2>';
 		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
-	} // END THE DELETE PAGE
+	} // END DELETE PAGE
 
 
 
-} elseif ( $requested == $install_directory . $do_delete ) { // BEGIN THE DODELETE PAGE
+} elseif ( $requested == $install_directory . $do_delete ) { // BEGIN DODELETE PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Post Deleted &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -510,11 +510,11 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 	} else {
 		echo '<h2>You can\'t delete a post, you\'re not logged in</h2>';
 		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
-	} // END THE DODELETE PAGE
+	} // END DODELETE PAGE
 
 
 
-} else { // BEGIN THE POST PAGE
+} else { // BEGIN POST PAGE
 	$location = $requested;
 	$posturl = str_ireplace($install_directory, "", $location);
 	// Run the MYSQLI Query
@@ -577,7 +577,7 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 		}
 	} 
 	
-} // END THE POST PAGE
+} // END POST PAGE
 
 
 
