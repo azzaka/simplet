@@ -350,9 +350,9 @@ if ( $requested == $install_directory ) { // BEGIN THE HOMEPAGE, or, more accura
 		if (!$result) { // If there's nothing
 			echo 'Invalid query: ' . mysqli_error() . ''; // Tell us what's wrong
 		} else { // But if it worked
-			mysqli_free_result($result); // Get rid of the result
 			echo '<h2>Post Created</h2>'; // Tell us it worked
 			echo '<h3><form action="' . $page_edit . '" method="post"><input type="hidden" name="url" value="' . $url . '" /><input type="submit" class="no" value="Edit" /></form> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+			mysqli_free_result($result); // Get rid of the result
 		}
 	} else { // If you're not allowed to be here
 		echo '<h2>You can\'t create a post, you\'re not logged in</h2>';
