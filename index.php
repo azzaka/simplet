@@ -125,7 +125,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 			$title = html_entity_decode($row[0], ENT_QUOTES | ENT_HTML5, "UTF-8"); // Decode the title
 			$excerpt = html_entity_decode($row[2], ENT_QUOTES | ENT_HTML5, "UTF-8"); // Decode the excerpt
 
-			echo '<div class="col span_1_of_3"><div class="padten">'; // Take up one-third, and leave some space
+			echo '<div class="col span_1_of_' . $posts_divider . '"><div class="padten">'; // Take up one-third, and leave some space
 
 			echo '<h2><a href="http://' . $home . $row[1] . '">' . $title . '</a></h2>'; // Echo the title and link it to it's own special page
 
