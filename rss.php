@@ -1,11 +1,14 @@
 <?php
 
+header('Content-Type: application/rss+xml');
+
 // Add all the options.
 require 'config.php';
 
 echo '<?xml version="1.0" encoding="utf-8"?>'; // Totally an XML file, no PHP here.
 echo '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">'; // An RSS feed to boot.
 echo '	<channel>'; // This is all one Channel, not a site, because this is totally TV.
+echo '		<atom:link href="http://' . $home . 'rss.php" rel="self" type="application/rss+xml" />'; // Apparently some feed readers need to be told they are where they are.
 echo '		<title>' . $site_title . '</title>';
 echo '		<description>' . $site_tagline . '</description>';
 echo '		<link>http://' . $home . '</link>';
@@ -26,12 +29,14 @@ if (!$result) { // If there's nothing
 			$excerpt = html_entity_decode($row[2], ENT_QUOTES | ENT_HTML5, "UTF-8");
 			$excerpt_stripped = strip_tags ($excerpt);
 			$url = urlencode($row[1]);
-			$timestamp = urlencode($row[5];
+			$timestamp = $row[5];
+			$timestamp = date('r', strtotime($timestamp));
 
 echo '	<item>';
 echo '		<title>' . $title_stripped . '</title>';
 echo '		<description>' . $excerpt_stripped . '</description>';
 echo '		<link>http://' . $home . $url . '</link>';
+echo '		<guid>http://' . $home . $url . '</guid>';
 echo '		<pubDate>' . $timestamp . '</pubDate>';
 echo '	</item>';
 
