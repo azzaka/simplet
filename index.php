@@ -79,6 +79,10 @@ echo '<meta name="description" content="' . $site_tagline . '">';
 echo '<link rel="icon" href="http://' . $home . 'favicon.ico">';
 echo '<link rel="shortcut icon" href="http://' . $home . 'favicon.ico">';
 
+// Add Sitemap and RSS Links
+echo '<link rel="sitemap" href="http://' . $home . 'sitemap.php" />';
+echo '<link rel="alternate" type="application/rss+xml" title="' . $site_title . '" href="http://' . $home . 'rss.php" />';
+
 // You can totally uncomment the next line if you want to use html5reset.css
 // echo '<link rel="stylesheet" href="http://' . $_SERVER['SERVER_ADDR'] . '/css/html5reset.css" media="all">
 
