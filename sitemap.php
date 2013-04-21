@@ -3,11 +3,13 @@
 // Add all the options.
 require 'config.php';
 
+$timestamp = date("Y-m-d");
+
 echo '<?xml version="1.0" encoding="UTF-8"?>'; // Totally an XML file, no PHP here.
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'; // An Sitemap to boot.
 echo '	<url>';
 echo '		<loc>http://' . $home . '</loc>';
-echo '		<lastmod></lastmod>';
+echo '		<lastmod>' . $timestamp . '</lastmod>';
 echo '		<priority>1</priority>';
 echo '		<changefreq>daily</changefreq>';
 echo '	</url>';
