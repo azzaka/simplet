@@ -167,7 +167,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 	if ( $auth == 'true' ) { // Are you logged in already?
 		echo '<h2>You\'re already logged in</h2>'; // What are you doing here then?
-		echo '<h3><a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>'; // Seriously, go away.
+		echo '<h3><a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>'; // Seriously, go away.
 	} else { // No?
 		echo '<form class="span_1_of_1" action="' . $do_login . '" method="post"><h3>Username</h3><input type="text" name="user" /><h3>Password</h3><input type="password" name="pass" /><input type="submit" value="Login" /></form>'; // Okay, login then
 	} // END LOGIN PAGE
@@ -184,7 +184,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 	if ( $auth == 'true' ) {
 		echo '<h2>Logged in</h2>'; // You logged in!
-		echo '<h3><a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>'; // What now?
+		echo '<h3><a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>'; // What now?
 	} else {
 		$user = htmlentities($_POST['user'], ENT_QUOTES | ENT_HTML5, "UTF-8");
 		if ( $user == $actual_user ) {
@@ -192,14 +192,14 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 			$hash = hash('sha256', $pass); // Hash the that
 			if ( $hash == $actual_pass ) { // If it's right
 				echo '<h2>Logged in</h2>'; // You logged in!
-				echo '<h3><a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>'; // What now?
+				echo '<h3><a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>'; // What now?
 			} else {
 			echo '<h2>Incorrect Password</h2>';
-			echo '<h3><a href="http://' . $home . $page_login . '">Try again</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+			echo '<h3><a href="http://' . $home . $page_login . '">Try again</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 			}
 		} else {
 			echo '<h2>Incorrect Username</h2>';
-			echo '<h3><a href="http://' . $home . $page_login . '">Try again</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+			echo '<h3><a href="http://' . $home . $page_login . '">Try again</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 		}
 	} // END DOLOGIN PAGE
 
@@ -215,10 +215,10 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 	if ( $auth == 'true' ) {
 		echo '<h2>Log Out?</h2>';
-		echo '<h3><a href="http://' . $home . $do_logout . '">Yes, log me out</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">No, go to Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">No, Return home</a></h3>';
+		echo '<h3><a href="http://' . $home . $do_logout . '">Yes, log me out</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">No, go to Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">No, Return home</a></h3>';
 	} else {
 		echo '<h2>You aren\'t logged in</h2>';
-		echo '<h3><a href="http://' . $home . $homepage . '">Return home</a></h3>';
+		echo '<h3><a href="http://' . $home . '">Return home</a></h3>';
 	} // END LOGOUT PAGE
 
 
@@ -233,10 +233,10 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 	if ( $auth == 'true' ) {
 		echo '<h2>Not logged out</h2>';
-		echo '<h3><a href="http://' . $home . $homepage . '">Return home</a></h3>';
+		echo '<h3><a href="http://' . $home . '">Return home</a></h3>';
 	} else {
 		echo '<h2>Logged Out</h2>';
-		echo '<h3><a href="http://' . $home . $homepage . '">Return home</a></h3>';
+		echo '<h3><a href="http://' . $home . '">Return home</a></h3>';
 	} // END DOLOGOUT PAGE
 
 
@@ -267,7 +267,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 				// A search option would be useful
 				// But we don't have one
 				// Instead, show a link home
-				echo '<h3><a href="http://' . $home . $homepage . '">Return home</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_create . '">Create a Post</a></h3>';
+				echo '<h3><a href="http://' . $home . '">Return home</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_create . '">Create a Post</a></h3>';
 
 			} else { // If it was none of those, then it must be a post.
 
@@ -301,7 +301,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 		}
 		
 	} else {
-		echo '<div class="section group"><div class="col span_1_of_1"><div class="padten"><h2>Access Denied</h2></div></div></div><div class="section group"><div class="col span_1_of_1"><div class="padten"></div><h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3></div></div>';
+		echo '<div class="section group"><div class="col span_1_of_1"><div class="padten"><h2>Access Denied</h2></div></div></div><div class="section group"><div class="col span_1_of_1"><div class="padten"></div><h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3></div></div>';
 	} // END ADMIN PAGE
 
 
@@ -321,7 +321,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 		
 	} else {
 		echo '<h2>You can\'t edit, you\'re not logged in</h2>';
-		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 	} // END CREATE PAGE
 
 } elseif ( $requested == $install_directory . $do_create ) { // BEGIN DOCREATE PAGE
@@ -358,12 +358,12 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 			echo 'Invalid query: ' . mysqli_error() . ''; // Tell us what's wrong
 		} else { // But if it worked
 			echo '<h2>Post Created</h2>'; // Tell us it worked
-			echo '<h3><form action="' . $page_edit . '" method="post"><input type="hidden" name="url" value="' . $url . '" /><input type="submit" class="no" value="Edit" /></form> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+			echo '<h3><form action="' . $page_edit . '" method="post"><input type="hidden" name="url" value="' . $url . '" /><input type="submit" class="no" value="Edit" /></form> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 			mysqli_free_result($result); // Get rid of the result
 		}
 	} else { // If you're not allowed to be here
 		echo '<h2>You can\'t create a post, you\'re not logged in</h2>';
-		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 	} // END DOCREATE PAGE
 
 
@@ -398,7 +398,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 				// A search option would be useful
 				// But we don't have one
 				// Instead, show a link home
-				echo '<h3><a href="http://' . $home . $homepage . '">Return home</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">Return to Admin</a></h3>';
+				echo '<h3><a href="http://' . $home . '">Return home</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">Return to Admin</a></h3>';
 
 			} else { // If it was none of those, then it must be a post.
 				while($row = mysqli_fetch_row($result)) { // Fetch the result
@@ -421,7 +421,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 		}
 	} else {
 		echo '<h2>You can\'t edit, you\'re not logged in</h2>';
-		echo '<h3><a href="http://' . $home . 'login">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+		echo '<h3><a href="http://' . $home . 'login">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 	} // END EDIT PAGE
 
 
@@ -468,12 +468,12 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 			mysqli_free_result($result);
 
 			echo '<h2>Post Edited</h2>';
-			echo '<h3><form action="' . $page_edit . '" method="post"><input type="hidden" name="url" value="' . $url . '" /><input type="submit" class="no" value="Edit" /></form> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+			echo '<h3><form action="' . $page_edit . '" method="post"><input type="hidden" name="url" value="' . $url . '" /><input type="submit" class="no" value="Edit" /></form> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 
 		}
 	} else {
 		echo '<h2>You can\'t edit a post, you\'re not logged in</h2>';
-		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 	} // END DOEDIT PAGE
 
 
@@ -491,7 +491,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 		echo '<h3><form action="' . $do_delete . '" method="post"><input type="hidden" name="url" value="' . $_POST['url'] . '" /><input type="submit" class="no" value="Yes, Delete" /></form> &nbsp;&middot;&nbsp; <a href="http://' . $home . $page_admin . '">No, Return to Admin</a></h3>';
 	} else {
 		echo '<h2>You can\'t delete a post, you\'re not logged in</h2>';
-		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 	} // END DELETE PAGE
 
 
@@ -512,11 +512,11 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 			echo 'Invalid query: ' . mysqli_error() . ''; // Tell us what's wrong
 		} else { // But while there is
 			echo '<h2>Post Deleted</h2>';
-			echo '<h3><a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+			echo '<h3><a href="http://' . $home . $page_admin . '">Admin</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 		}
 	} else {
 		echo '<h2>You can\'t delete a post, you\'re not logged in</h2>';
-		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . $homepage . '">Return home</a></h3>';
+		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 	} // END DODELETE PAGE
 
 
@@ -547,7 +547,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 			// A search option would be useful
 			// But we don't have one
 			// Instead, show a link home
-			echo '<h3><a href="http://' . $home . $homepage . '">Return home</a></h3>';
+			echo '<h3><a href="http://' . $home . '">Return home</a></h3>';
 
 			// Close that secion we opened, remember that?
 			echo '<div class="clear"></div></div></div></div>';
