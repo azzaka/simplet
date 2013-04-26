@@ -10,7 +10,7 @@ if ( $auth == 'true' ) { // If logged in
 // }
 
 // Show the site title, and link it to the homepage
-echo '<h1><a href="http://' . $home . $homepage . '">' . $site_title . '</a></h1><h5>' . $site_tagline . '</h5>'; // And the tagline, don't forget that.
+echo '<h1><a href="http://' . $home . '">' . $site_title . '</a></h1><h5>' . $site_tagline . '</h5>'; // And the tagline, don't forget that.
 
 	$result = mysqli_query($connection, "SELECT * FROM $table_name WHERE nav='1' ORDER BY title ASC", MYSQLI_STORE_RESULT);
 

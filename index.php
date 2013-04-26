@@ -61,8 +61,11 @@ if ( $requested == $install_directory . $do_login ) { // Yes?
 
 	$auth = 'false';
 
-} elseif ( $_COOKIE["auth"] == $actual_ckie ) { // Are you authenticated 
-	$auth = 'true'; // Yes you are
+} elseif ( isset ($_COOKIE['auth']) ) { // Is there an auth Cookie?
+	if ($_COOKIE["auth"] == $actual_ckie ) { // Are you authenticated 
+		$auth = 'true'; // Yes you are
+	}
+
 } else { // No you're not
 	$auth = 'false'; // Not at all
 }
