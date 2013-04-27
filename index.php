@@ -33,7 +33,8 @@ if ( !isset ( // Check the config file loaded correctly.
 	$home, 
 	$posts_printed, 
 	$posts_divider, 
-	$requested 
+	$requested, 
+	$location 
 	) ) {
 		echo '<!DocType html><html><head><meta charset="UTf-8"><title>Simplet Encountered a Fatal Error</title><style>body{width:70%;margin:2em auto}h1{font:normal 6em/1.7 LeagueGothicRegular,"lucida sans unicode","lucida grande","Trebuchet MS",verdana,arial,helvetica,helve,sans-serif;color:#111;margin:0;text-align:center}h2{font:normal 2em/2 LeagueGothicRegular,"lucida sans unicode","lucida grande","Trebuchet MS",verdana,arial,helvetica,helve,sans-serif;color:#222;margin:2em 0;text-align:center}p{font:normal 1em/1.7 LeagueGothicRegular,"lucida sans unicode","lucida grande","Trebuchet MS",verdana,arial,helvetica,helve,sans-serif;color:#333;margin:0;text-align:justify}h3{font: lighter 2em/10 LeagueGothicRegular,"lucida sans unicode","lucida grande","Trebuchet MS",verdana,arial,helvetica,helve,sans-serif;font-style:italic;color:#222;margin:0;text-align:right}a{color:#1777af;text-decoration:none}</style></head><body><h1>FATAL ERROR :</h1><h2>The config file loaded incorrectly, or required variables are not set.</h2><p>Simplet encountered a fatal error and has had to hault this application. There was a problem loading the config file and all the variables have not been set. Variables may be empty, but not removed. It is possible there are incorrect file permissions or faulty formatting. You may <a href="https://github.com/eustasy/simplet/issues">raise an issue on GitHub</a> or attempt to fix the problem yourself. It should not require anything more than a basic understanding of PHP or file permissions.</p><h3><a href="http://simplet.eustasy.org/">Simplet</a></h3></div></body></html>';
 		exit;
@@ -42,7 +43,7 @@ if ( !isset ( // Check the config file loaded correctly.
 
 
 // Check you haven't just logged in
-if ( $requested == $install_directory . $do_login ) { // Yes?
+if ( $location == $do_login ) { // Yes?
 	$user = htmlentities($_POST['user'], ENT_QUOTES | ENT_HTML5, "UTF-8");
 	if ( $user == $actual_user ) { // Okay, check the Username
 		$pass = $_POST['pass'] . $actual_salt; // Append the salt to the post_pass
@@ -53,7 +54,7 @@ if ( $requested == $install_directory . $do_login ) { // Yes?
 			$auth = 'true'; // Make sure you are
 		}
 	}
-} elseif ( $requested == $install_directory . $do_logout ) { // Are you logging out?
+} elseif ( $location == $do_logout ) { // Are you logging out?
 
 	setcookie ("auth", "", 1); // Clear the Cookie
 	setcookie ("auth", false);
@@ -157,7 +158,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 
 
-} elseif ( $requested == $install_directory . $page_login ) { // BEGIN LOGIN PAGE
+} elseif ( $location == $page_login ) { // BEGIN LOGIN PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Login &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -174,7 +175,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 
 
-} elseif ( $requested == $install_directory . $do_login ) { // BEGIN DOLOGIN PAGE
+} elseif ( $location == $do_login ) { // BEGIN DOLOGIN PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Logged In &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -205,7 +206,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 
 
-} elseif ( $requested == $install_directory . $page_logout ) { // BEGIN LOGOUT PAGE
+} elseif ( $location == $page_logout ) { // BEGIN LOGOUT PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Logout &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -223,7 +224,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 
 
-} elseif ( $requested == $install_directory . $do_logout ) { // BEGIN DOLOGOUT PAGE
+} elseif ( $location == $do_logout ) { // BEGIN DOLOGOUT PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Logged Out &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -241,7 +242,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 
 
-} elseif ( $requested == $install_directory . $page_admin ) { // BEGIN ADMIN PAGE
+} elseif ( $location == $page_admin ) { // BEGIN ADMIN PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Administration &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -305,7 +306,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 	} // END ADMIN PAGE
 
 
-} elseif ( $requested == $install_directory . $page_create ) { // BEGIN CREATE PAGE
+} elseif ( $location == $page_create ) { // BEGIN CREATE PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Create a new Post &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -324,7 +325,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 		echo '<h3><a href="http://' . $home . $page_login . '">Login</a> &nbsp;&middot;&nbsp; <a href="http://' . $home . '">Return home</a></h3>';
 	} // END CREATE PAGE
 
-} elseif ( $requested == $install_directory . $do_create ) { // BEGIN DOCREATE PAGE
+} elseif ( $location == $do_create ) { // BEGIN DOCREATE PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Post Created &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -368,7 +369,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 
 
-} elseif ( $requested == $install_directory . $page_edit ) { // BEGIN EDIT PAGE
+} elseif ( $location == $page_edit ) { // BEGIN EDIT PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Edit a Post &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -426,7 +427,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 
 
-} elseif ( $requested == $install_directory . $do_edit ) { // BEGIN DOEDIT PAGE
+} elseif ( $location == $do_edit ) { // BEGIN DOEDIT PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Post Edited &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -478,7 +479,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 
 
-} elseif ( $requested == $install_directory . $page_delete ) { // BEGIN DELETE PAGE
+} elseif ( $location == $page_delete ) { // BEGIN DELETE PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Delete Post &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
@@ -496,7 +497,7 @@ if ( $requested == $install_directory ) { // BEGIN HOMEPAGE, or, more accurately
 
 
 
-} elseif ( $requested == $install_directory . $do_delete ) { // BEGIN DODELETE PAGE
+} elseif ( $location == $do_delete ) { // BEGIN DODELETE PAGE
 
 	// Echo the title, which also tells us where we are, or where this script thinks it is
 	echo '<title>Post Deleted &nbsp;&middot;&nbsp; ' . $site_title . '</title>';
