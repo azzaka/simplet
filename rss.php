@@ -3,7 +3,7 @@
 header('Content-Type: application/rss+xml');
 
 // Add all the options.
-require 'config.php';
+include 'config.php';
 
 if ( !isset ( // Check the config file loaded correctly. 
 	$site_title,
