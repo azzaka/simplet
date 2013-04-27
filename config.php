@@ -92,7 +92,8 @@ $posts_printed = 0; // Set the loops as being at the beginning
 $posts_divider = 3; // This can be any integer from 1 to 12, and defines how many posts per row are printed on the index
 $requested = str_replace("'", "", $_SERVER['REQUEST_URI']);
 $requested = str_replace('"', "", $requested);
-// print $requested; // Check where we think we are, useful for debuggin post not found errors
+$location = str_ireplace($install_directory, "", $requested);
+// print $location; // Check where we think we are, useful for debuggin post not found errors
 
 
 
