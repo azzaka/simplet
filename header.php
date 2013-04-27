@@ -12,28 +12,28 @@ if ( $auth == 'true' ) { // If logged in
 // Show the site title, and link it to the homepage
 echo '<h1><a href="http://' . $home . '">' . $site_title . '</a></h1><h5>' . $site_tagline . '</h5>'; // And the tagline, don't forget that.
 
-	$result = mysqli_query($connection, "SELECT * FROM $table_name WHERE nav='1' ORDER BY title ASC", MYSQLI_STORE_RESULT);
+	$nav__result = mysqli_query($connection, "SELECT * FROM $table_name WHERE nav='1' ORDER BY title ASC", MYSQLI_STORE_RESULT);
 
-	if (!$result) { // If there's nothing
+	if (!$nav__result) { // If there's nothing
 		echo 'Invalid query: ' . mysqli_error() . ''; // Tell us what's wrong
 	} else {
 
-		$num_rows = mysqli_num_rows($result);
+		$nav_num_rows = mysqli_num_rows($nav__result);
 
 		echo '<div class="section group nav">';
 
-		while($row = mysqli_fetch_row($result)) {
+		while($row = mysqli_fetch_row($nav__result)) {
 
 			$nav_title = html_entity_decode($row[0], ENT_QUOTES | ENT_HTML5, "UTF-8");
 
-			echo '<div class="col span_1_of_' . $num_rows . '">';
+			echo '<div class="col span_1_of_' . $nav_num_rows . '">';
 			echo '<a href="http://' . $home . $row[1] . '">' . $nav_title . '</a>';
 			echo '<div class="clear"></div></div>';
 		}
 
 		echo '</div>';
 
-		mysqli_free_result($result);
+		mysqli_free_result($nav__result);
 
 	}
 
