@@ -93,7 +93,7 @@ $posts_divider = 3; // This can be any integer from 1 to 12, and defines how man
 $requested = str_replace("'", "", $_SERVER['REQUEST_URI']);
 $requested = str_replace('"', "", $requested);
 $location = str_ireplace($install_directory, "", $requested);
-// print $location; // Check where we think we are, useful for debuggin post not found errors
+// echo $location; // Check where we think we are, useful for debuggin post not found errors
 
 
 
